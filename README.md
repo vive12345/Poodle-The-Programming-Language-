@@ -33,8 +33,8 @@ augroup END
 
 #CONTRIBUTORS
 1. Shloka Manish Pandya
-2. Malavika Anand
-3. Vipsa Kamani
+2. Vipsa Kamani
+3. Malavika Anand
 
 #Acknowledgments
 1. Dr. Ajay Bansal
