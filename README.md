@@ -5,7 +5,7 @@
 
 ## 📋 Overview
 
-Poodle is a statically-typed programming language designed for educational purposes. It features a clean syntax with support for variables, control structures, loops, and more.
+Poodle is a statically-typed new programming language designed for it ease of use by combining the best features of C++, python and others . It features a clean syntax with support for variables, control structures, loops, and more.
 
 ## ✨ Features
 
@@ -22,7 +22,9 @@ Poodle is a statically-typed programming language designed for educational purpo
 ```
 SER502-Poodle-Team23/
 ├── doc/
-│   └── Contribution.txt       # Team member contributions
+│   └── 502-PROJECT.pptx                         # Presentation doc
+|   └── Contribution.txt                         # Team member contributions
+|   └── SER502-Team23-project-description.pdf    # In depth, feature and working of our programming language           
 ├── src/
 │   ├── Lexer.py               # Lexical analyzer
 │   ├── interpreter.pl         # Interpreter for execution
@@ -124,8 +126,3 @@ for j in range (1;5) {
 ## 🙏 Acknowledgments
 
 - Dr. Ajay Bansal
-- James Smith
-
-## 📄 License
-
-This project is developed for educational purposes as part of SER502 at Arizona State University.
