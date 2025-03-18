@@ -1,46 +1,131 @@
-# SER502-Poodle-Team23
+# 🐩 Poodle Programming Language
 
-#POODLE PROGRAMMING LANGUAGE
+[![Poodle Video](https://img.youtube.com/vi/odOh4-f9qrM/maxresdefault.jpg)](https://youtu.be/odOh4-f9qrM)
+*Click on the image to watch the demo video*
 
-#INSTALLATION
-Requires SWI-Prolog to be installed on the computer
+## 📋 Overview
 
-#Installing PLY
-python3 -m pip install ply
+Poodle is a statically-typed programming language designed for educational purposes. It features a clean syntax with support for variables, control structures, loops, and more.
 
-Steps to Run:
-1. Run this command on command line inside your src folder where the testprog.poo file is located-> python3 Lexer.py testprog.poo
-2. The above command will succssfully generate a testprog.pootokens file in the same src directory.
-3. Open Swipl command line and change the directory to src
-4. Load/consult the mainFile.pl
-5. Run main_prog('testprog.pootokens')
+## ✨ Features
 
+- **Static typing** with support for `int`, `float`, `string`, and `bool` data types
+- **Control structures** including `if`, `if-else`, and `if-elseif-else`
+- **Loop structures** - `for`, compact `for` (Python-style), and `while` loops
+- **Expressions** with standard arithmetic operators and precedence rules
+- **Boolean operators** - `&&` (AND), `||` (OR), and `!!` (NOT)
+- **Comparison operators** - `==`, `<`, `>`, `<=`, `>=`, `!!=`
+- **Ternary expressions** - `(condition ? expr1 : expr2)`
 
-#MAKING OF .poo files using VIM
+## 🛠️ Project Structure
 
-1. Open command line and open file via this command vim ~/.vimrc
-2. add this code to the above file -
-augroup imp_ft
-au!
-autocmd BufNewFile,BufRead *.imp  set filetype=imp
-augroup END
-3. Add the below code to this file ~/.vim/ftplugin/imp.vim:
- nnoremap <F10> :w<CR>:!python Lexer.py --evaluate %<CR>
-4. Go to src directory and create a new file by: touch newfile.poo
-5. Edit file by this command: vim newfile.poo
-6. save the code and follow the steps mentioned in the start of the document.
+```
+SER502-Poodle-Team23/
+├── doc/
+│   └── Contribution.txt       # Team member contributions
+├── src/
+│   ├── Lexer.py               # Lexical analyzer
+│   ├── interpreter.pl         # Interpreter for execution
+│   ├── mainFile.pl            # Main program runner
+│   ├── parser.pl              # Parser for syntax analysis
+│   ├── tokenReader.pl         # Token file reader
+│   ├── testprog.poo           # Sample program
+│   └── testprog.pootokens     # Generated tokens
+└── README.md                  # Project documentation
+```
 
+## 🔍 How It Works
 
-#CONTRIBUTORS
-1. Shloka Manish Pandya
-2. Vipsa Kamani
-3. Malavika Anand
+1. **Lexical Analysis**: The lexer (`Lexer.py`) converts source code into tokens
+2. **Parsing**: The parser (`parser.pl`) validates syntax and generates a parse tree
+3. **Interpretation**: The interpreter (`interpreter.pl`) executes the parse tree
 
-#Acknowledgments
-1. Dr. Ajay Bansal
-2. James Smith
+## 📥 Installation Requirements
 
-#Youtube Video Link: https://youtu.be/odOh4-f9qrM 
+1. **SWI-Prolog**: Required for interpretation
+   - Download from [SWI-Prolog website](https://www.swi-prolog.org/download/stable)
 
- 
+2. **Python with PLY (Python Lex-Yacc)**:
+   ```bash
+   python3 -m pip install ply
+   ```
 
+## 🚀 Running Poodle Programs
+
+### Method 1: Command Line
+
+```bash
+# Step 1: Generate tokens
+python3 Lexer.py testprog.poo
+
+# Step 2: Run the program through the interpreter
+swipl -g "main_prog('testprog.pootokens')" mainFile.pl
+```
+
+### Method 2: Using VIM (for development)
+
+1. Configure VIM for .poo files:
+   ```bash
+   # Open .vimrc
+   vim ~/.vimrc
+   
+   # Add this code
+   augroup imp_ft
+   au!
+   autocmd BufNewFile,BufRead *.imp set filetype=imp
+   augroup END
+   ```
+
+2. Create `~/.vim/ftplugin/imp.vim` with:
+   ```vim
+   nnoremap <F10> :w<CR>:!python Lexer.py --evaluate %<CR>
+   ```
+
+3. Create and edit Poodle files:
+   ```bash
+   touch newfile.poo
+   vim newfile.poo
+   ```
+
+4. Press F10 to compile and run the program
+
+## 📝 Sample Code
+
+```
+int x = 5;
+bool isValid = true;
+string message = "Hello, Poodle!";
+
+if (x > 3) {
+    print>>"x is greater than 3";
+    
+    if (isValid) {
+        print>>"and isValid is true";
+    }
+}
+
+print>>"Loop demo:";
+for (int i = 0; i < 3; ++i) {
+    print>>i;
+}
+
+print>>"Compact loop:";
+for j in range (1;5) {
+    print>>j;
+}
+```
+
+## ✨ Contributors
+
+- Shloka Manish Pandya - Interpreter and Token Reader
+- Vipsa Kamani - Parser
+- Malavika Anand - Lexer and Token Reader
+
+## 🙏 Acknowledgments
+
+- Dr. Ajay Bansal
+- James Smith
+
+## 📄 License
+
+This project is developed for educational purposes as part of SER502 at Arizona State University.
